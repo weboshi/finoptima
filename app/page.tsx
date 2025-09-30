@@ -1267,11 +1267,9 @@ const FinOptimaLanding: React.FC = () => {
           </motion.div>
         </div>
       </section>
-
       <ContactFormSection />
       <Footer />
-
-      {/* Mobile Menu Button */}
+      {/* Mobile Menu Button Hidden on Desktop */}
       <div className="md:hidden fixed bottom-6 right-6">
         <button className="bg-blue-600 text-white p-3 rounded-full shadow-lg">
           <Settings className="w-6 h-6" />
