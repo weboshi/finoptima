@@ -148,7 +148,6 @@ const FinOptimaLanding: React.FC = () => {
               <NavLink href="#" isActive>Home</NavLink>
               <NavLink onClick={() => scrollToSection('contact')}>Services</NavLink>
               <NavLink onClick={() => scrollToSection('products')}>Products</NavLink>
-              <NavLink href="#">Resources</NavLink>
             </div>
 
             {/* CTA Button */}
