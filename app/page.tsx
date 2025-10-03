@@ -21,10 +21,7 @@ const NavLink: React.FC<NavLinkProps> = ({ href, onClick, children, isActive = f
   <a
     href={href}
     onClick={onClick}
-    className={`font-medium flex items-center cursor-pointer ${isActive
-      ? 'text-black border-b-2 border-fin-blue'
-      : 'text-black hover:text-gray-700'
-      }`}
+    className="font-medium flex items-center cursor-pointer text-black hover:text-gray-700"
   >
     {children}
   </a>
@@ -145,9 +142,9 @@ const FinOptimaLanding: React.FC = () => {
 
             {/* Navigation Links */}
             <div className="hidden md:flex items-center space-x-8 px-14 py-3 rounded-md">
-              <NavLink href="#" isActive>Home</NavLink>
-              <NavLink onClick={() => scrollToSection('contact')}>Services</NavLink>
+              <NavLink href="#">Home</NavLink>
               <NavLink onClick={() => scrollToSection('products')}>Products</NavLink>
+              <NavLink href="#">Meet the Team</NavLink>
             </div>
 
             {/* CTA Button */}
@@ -165,16 +162,20 @@ const FinOptimaLanding: React.FC = () => {
       <section className="hero-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 pb-20">
           <div className="text-center">
+            {/* <div className="inline-block bg-fin-blue text-white px-6 py-2 rounded-md border border-fin-blue mb-6">
+              <span className="text-sm font-medium">DeepSecure™ Fraud Detection Platform</span>
+            </div> */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              <span className="text-fin-blue">Contextual AI</span> That Stops<br />
-              Fraud Across Every Channel
+              <span className="text-fin-blue">Protect Your Organization</span><br>
+              </br> from Financial Fraud
             </h1>
 
             <p className="text-base sm:text-lg text-black max-w-4xl mx-auto mb-12 leading-relaxed">
-              <span className="font-semibold">DeepSecure™</span> stops sophisticated fraud attacks in real-time by analyzing threats from multiple data sources, with next-gen AI that adapts and integrates seamlessly with your existing systems.
+              Advanced AI-powered solutions for banks and credit unions to detect fraud, reduce false positives, and safeguard assets in real-time.
             </p>
 
             <button
+
               onClick={() => scrollToSection('contact')}
               className="bg-fin-dark-blue hover:bg-blue-800 text-white px-8 py-4 rounded-md text-lg font-semibold transition-colors transform cursor-pointer"
             >
