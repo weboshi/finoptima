@@ -1453,7 +1453,7 @@ const FinOptimaLanding: React.FC = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
                 <span className="text-xs font-semibold text-fin-blue uppercase tracking-wide">Article</span>
-                <h4 className="text-lg font-bold text-gray-900 mt-2 mb-2">The Illusion of Coverage: Why 'One Tool for Every Problem' Isn't Working</h4>
+                <h4 className="text-lg font-bold text-gray-900 mt-2 mb-2">The Illusion of Coverage: Why &apos;One Tool for Every Problem&apos; Isn&apos;t Working</h4>
                 <p className="text-black text-sm leading-relaxed font-light mb-3">
                   Discover why fragmented fraud prevention tools create dangerous gaps and how integrated systems detect coordinated fraud attempts.
                 </p>
@@ -1469,7 +1469,7 @@ const FinOptimaLanding: React.FC = () => {
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
                 <span className="text-xs font-semibold text-fin-blue uppercase tracking-wide">Article</span>
-                <h4 className="text-lg font-bold text-gray-900 mt-2 mb-2">How Modern Fraud Prevention Can Boost Community Banks' ROI</h4>
+                <h4 className="text-lg font-bold text-gray-900 mt-2 mb-2">How Modern Fraud Prevention Can Boost Community Banks&apos; ROI</h4>
                 <p className="text-black text-sm leading-relaxed font-light mb-3">
                   Discover how fraud prevention transforms from a cost center to a strategic opportunity, potentially saving community banks $145K+ annually.
                 </p>
