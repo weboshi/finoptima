@@ -250,9 +250,8 @@ export default function PrivacyPolicy() {
           </p>
           <p className="text-gray-700 mb-4">
             <strong>FinOptima Solutions</strong><br />
-            Email: privacy@finoptima.com<br />
-            Address: [Your Company Address]<br />
-            Phone: [Your Phone Number]
+            Email: info@finoptima.ai<br />
+
           </p>
           <p className="text-gray-700 mb-4">
             For data protection inquiries in specific jurisdictions, you may also contact our Data Protection Officer at: dpo@finoptima.com
