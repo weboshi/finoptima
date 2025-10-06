@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 
 const Footer = () => {
     return (
@@ -19,15 +18,29 @@ const Footer = () => {
 
                     {/* Product Column */}
                     <div>
-                        <h3 className="text-white font-semibold text-lg mb-4">
-                            <Link
-                                href="/#products"
-                                className="text-white hover:text-fin-blue transition-colors cursor-pointer"
-                            >
-                                Product
-                            </Link>
-                        </h3>
-
+                        <h3 className="text-white font-semibold text-lg mb-4">Products</h3>
+                        <ul className="space-y-3">
+                            <li>
+                                <a href="/#products" className="text-gray-400 hover:text-white transition-colors">
+                                    DeepSecure™ Onboard
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/#products" className="text-gray-400 hover:text-white transition-colors">
+                                    DeepSecure™ Shield
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/#products" className="text-gray-400 hover:text-white transition-colors">
+                                    DeepSecure™ CheckGuard
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/#products" className="text-gray-400 hover:text-white transition-colors">
+                                    DeepSecure™ Network
+                                </a>
+                            </li>
+                        </ul>
                     </div>
 
                     {/* Company Column */}
@@ -48,13 +61,8 @@ const Footer = () => {
                         <h3 className="text-white font-semibold text-lg mb-4">Terms of Use</h3>
                         <ul className="space-y-3">
                             <li>
-                                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                                <a href="/privacy-policy" className="text-gray-400 hover:text-white transition-colors">
                                     Privacy Policy
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                                    Terms and Conditions
                                 </a>
                             </li>
                         </ul>
