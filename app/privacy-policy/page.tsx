@@ -5,40 +5,20 @@ import Link from 'next/link';
 import Footer from '@/components/ui/Footer';
 
 interface NavLinkProps {
-  href?: string;
-  onClick?: () => void;
+  href: string;
   children: React.ReactNode;
-  isActive?: boolean;
 }
 
-const NavLink: React.FC<NavLinkProps> = ({ href, onClick, children, isActive = false }) => {
-  if (href) {
-    return (
-      <Link
-        href={href}
-        className="font-medium flex items-center cursor-pointer text-black hover:text-gray-700"
-      >
-        {children}
-      </Link>
-    );
-  }
-  return (
-    <a
-      onClick={onClick}
-      className="font-medium flex items-center cursor-pointer text-black hover:text-gray-700"
-    >
-      {children}
-    </a>
-  );
-};
+const NavLink: React.FC<NavLinkProps> = ({ href, children }) => (
+  <Link
+    href={href}
+    className="font-medium flex items-center cursor-pointer text-black hover:text-gray-700"
+  >
+    {children}
+  </Link>
+);
 
 export default function PrivacyPolicy() {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -65,12 +45,12 @@ export default function PrivacyPolicy() {
             </div>
 
             {/* CTA Button */}
-            <button
-              onClick={() => window.location.href = '/#contact'}
-              className="bg-fin-dark-blue hover:bg-blue-800 text-white px-8 py-3 rounded-md font-medium transition-colors cursor-pointer"
+            <Link
+              href="/#contact"
+              className="bg-fin-dark-blue hover:bg-blue-800 text-white px-8 py-3 rounded-md font-medium transition-colors cursor-pointer inline-flex items-center"
             >
               Request Demo
-            </button>
+            </Link>
           </div>
         </div>
       </nav>
