@@ -11,15 +11,26 @@ interface NavLinkProps {
   isActive?: boolean;
 }
 
-const NavLink: React.FC<NavLinkProps> = ({ href, onClick, children, isActive = false }) => (
-  <a
-    href={href}
-    onClick={onClick}
-    className="font-medium flex items-center cursor-pointer text-black hover:text-gray-700"
-  >
-    {children}
-  </a>
-);
+const NavLink: React.FC<NavLinkProps> = ({ href, onClick, children, isActive = false }) => {
+  if (href) {
+    return (
+      <Link
+        href={href}
+        className="font-medium flex items-center cursor-pointer text-black hover:text-gray-700"
+      >
+        {children}
+      </Link>
+    );
+  }
+  return (
+    <a
+      onClick={onClick}
+      className="font-medium flex items-center cursor-pointer text-black hover:text-gray-700"
+    >
+      {children}
+    </a>
+  );
+};
 
 export default function PrivacyPolicy() {
   const scrollToSection = (sectionId: string) => {
