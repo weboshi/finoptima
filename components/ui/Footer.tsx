@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const Footer = () => {
     return (
@@ -21,24 +22,24 @@ const Footer = () => {
                         <h3 className="text-white font-semibold text-lg mb-4">Products</h3>
                         <ul className="space-y-3">
                             <li>
-                                <a href="/#products" className="text-gray-400 hover:text-white transition-colors">
+                                <Link href="/#products" className="text-gray-400 hover:text-white transition-colors">
                                     DeepSecure™ Onboard
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="/#products" className="text-gray-400 hover:text-white transition-colors">
+                                <Link href="/#products" className="text-gray-400 hover:text-white transition-colors">
                                     DeepSecure™ Shield
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="/#products" className="text-gray-400 hover:text-white transition-colors">
+                                <Link href="/#products" className="text-gray-400 hover:text-white transition-colors">
                                     DeepSecure™ CheckGuard
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="/#products" className="text-gray-400 hover:text-white transition-colors">
+                                <Link href="/#products" className="text-gray-400 hover:text-white transition-colors">
                                     DeepSecure™ Network
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>
@@ -61,9 +62,9 @@ const Footer = () => {
                         <h3 className="text-white font-semibold text-lg mb-4">Terms of Use</h3>
                         <ul className="space-y-3">
                             <li>
-                                <a href="/privacy-policy" className="text-gray-400 hover:text-white transition-colors">
+                                <Link href="/privacy-policy" className="text-gray-400 hover:text-white transition-colors">
                                     Privacy Policy
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>
