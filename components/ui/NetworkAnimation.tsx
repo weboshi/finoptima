@@ -13,6 +13,7 @@ const NetworkAnimation: React.FC = () => {
     if (!ctx) return;
 
     const updateCanvasSize = () => {
+      if (!canvas || !ctx) return;
       const dpr = window.devicePixelRatio || 1;
       canvas.width = canvas.offsetWidth * dpr;
       canvas.height = canvas.offsetHeight * dpr;
@@ -30,7 +31,20 @@ const NetworkAnimation: React.FC = () => {
     const center = { x: centerX, y: centerY, radius: 30 };
 
     // Create hub nodes around center
-    const hubs: any[] = [];
+    interface Hub {
+      x: number;
+      y: number;
+      radius: number;
+      connections: OuterNode[];
+    }
+
+    interface OuterNode {
+      x: number;
+      y: number;
+      radius: number;
+    }
+
+    const hubs: Hub[] = [];
     const hubCount = 8;
     const hubDistance = 140;
 
@@ -48,7 +62,7 @@ const NetworkAnimation: React.FC = () => {
     const nodesPerHub = 3;
     const totalOuterNodes = hubCount * nodesPerHub; // 24 total nodes
     const outerNodeDistance = hubDistance + 90;
-    const outerNodes: any[] = [];
+    const outerNodes: OuterNode[] = [];
 
     for (let i = 0; i < totalOuterNodes; i++) {
       const angle = (i / totalOuterNodes) * Math.PI * 2;
@@ -76,8 +90,30 @@ const NetworkAnimation: React.FC = () => {
     });
 
     // Animation state
-    const lines: any[] = [];
-    const nodes: any[] = [];
+    interface Line {
+      x1: number;
+      y1: number;
+      x2: number;
+      y2: number;
+      progress: number;
+      speed: number;
+      delay: number;
+      type: string;
+    }
+
+    interface Node {
+      x: number;
+      y: number;
+      radius: number;
+      scale: number;
+      appearDelay: number;
+      type: string;
+      color?: string;
+      colorTransition?: number;
+    }
+
+    const lines: Line[] = [];
+    const nodes: Node[] = [];
 
     // Center node always visible
     nodes.push({
@@ -92,9 +128,9 @@ const NetworkAnimation: React.FC = () => {
     });
 
     // Create node and line objects for animation
-    hubs.forEach((hub, hubIndex) => {
+    hubs.forEach((hub) => {
       // Outer nodes
-      hub.connections.forEach((node: any, connIndex: number) => {
+      hub.connections.forEach((node) => {
         nodes.push({
           x: node.x,
           y: node.y,
@@ -146,7 +182,7 @@ const NetworkAnimation: React.FC = () => {
     let outerCircleProgress = 0;
 
     function drawNode(x: number, y: number, radius: number, scale = 1, color = '#4A4A4A', noBorder = false) {
-      if (scale <= 0) return;
+      if (scale <= 0 || !ctx) return;
 
       ctx.save();
       ctx.translate(Math.round(x), Math.round(y));
@@ -170,7 +206,7 @@ const NetworkAnimation: React.FC = () => {
     }
 
     function drawLine(x1: number, y1: number, x2: number, y2: number, progress: number) {
-      if (progress <= 0) return;
+      if (progress <= 0 || !ctx) return;
 
       const easedProgress = easeIn(progress);
       const currentX = x1 + (x2 - x1) * easedProgress;
@@ -185,6 +221,8 @@ const NetworkAnimation: React.FC = () => {
     }
 
     function animate() {
+      if (!ctx || !canvas) return;
+
       ctx.clearRect(0, 0, canvas.offsetWidth, canvas.offsetHeight);
 
       frame++;
@@ -210,14 +248,14 @@ const NetworkAnimation: React.FC = () => {
           const hubLines = lines.filter(l => l.type === 'hub');
           const allHubLinesComplete = hubLines.every(l => l.progress >= 1);
 
-          if (allHubLinesComplete && node.colorTransition < 1) {
-            node.colorTransition = Math.min(node.colorTransition + 0.015, 1);
+          if (allHubLinesComplete && (node.colorTransition || 0) < 1) {
+            node.colorTransition = Math.min((node.colorTransition || 0) + 0.015, 1);
           }
 
           // Interpolate between grey and orange
           const startR = 74, startG = 74, startB = 74;
           const endR = 255, endG = 69, endB = 0;
-          const t = node.colorTransition;
+          const t = node.colorTransition || 0;
 
           const r = Math.round(startR + (endR - startR) * t);
           const g = Math.round(startG + (endG - startG) * t);
@@ -264,6 +302,7 @@ const NetworkAnimation: React.FC = () => {
 
     // Handle window resize
     const handleResize = () => {
+      if (!canvas || !ctx) return;
       const dpr = window.devicePixelRatio || 1;
       canvas.width = canvas.offsetWidth * dpr;
       canvas.height = canvas.offsetHeight * dpr;
