@@ -12,7 +12,7 @@ const Footer = () => {
                         <div className="mb-6">
                             <span className="text-2xl font-bold">
                                 <span className="text-fin-blue">Fin</span>
-                                <span className="text-white">Optima</span>
+                                <span className="text-white">Optima Solutions</span>
                             </span>
                         </div>
                     </div>

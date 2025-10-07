@@ -133,7 +133,7 @@ const FinOptimaLanding: React.FC = () => {
             <div className="flex items-center">
               <Link href="/" className="block">
                 <img
-                  src="/Fin_Logo.png"
+                  src="/Logo_v2.png"
                   alt="FinOptima"
                   className="h-8 w-auto"
                 />
