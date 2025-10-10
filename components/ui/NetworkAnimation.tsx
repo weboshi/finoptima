@@ -27,8 +27,12 @@ const NetworkAnimation: React.FC = () => {
     const centerX = canvas.offsetWidth / 2;
     const centerY = canvas.offsetHeight / 2;
 
+    // Scale based on canvas size for responsiveness
+    const canvasSize = Math.min(canvas.offsetWidth, canvas.offsetHeight);
+    const scaleFactor = canvasSize / 600; // 600 is the base size
+
     // Network structure
-    const center = { x: centerX, y: centerY, radius: 30 };
+    const center = { x: centerX, y: centerY, radius: 30 * scaleFactor };
 
     // Create hub nodes around center
     interface Hub {
@@ -46,14 +50,14 @@ const NetworkAnimation: React.FC = () => {
 
     const hubs: Hub[] = [];
     const hubCount = 8;
-    const hubDistance = 140;
+    const hubDistance = 140 * scaleFactor;
 
     for (let i = 0; i < hubCount; i++) {
       const angle = (i / hubCount) * Math.PI * 2;
       hubs.push({
         x: centerX + Math.cos(angle) * hubDistance,
         y: centerY + Math.sin(angle) * hubDistance,
-        radius: 14,
+        radius: 14 * scaleFactor,
         connections: []
       });
     }
@@ -61,7 +65,7 @@ const NetworkAnimation: React.FC = () => {
     // Create outer nodes - 3 per hub, evenly distributed
     const nodesPerHub = 3;
     const totalOuterNodes = hubCount * nodesPerHub; // 24 total nodes
-    const outerNodeDistance = hubDistance + 90;
+    const outerNodeDistance = hubDistance + (90 * scaleFactor);
     const outerNodes: OuterNode[] = [];
 
     for (let i = 0; i < totalOuterNodes; i++) {
@@ -69,7 +73,7 @@ const NetworkAnimation: React.FC = () => {
       outerNodes.push({
         x: centerX + Math.cos(angle) * outerNodeDistance,
         y: centerY + Math.sin(angle) * outerNodeDistance,
-        radius: 6
+        radius: 6 * scaleFactor
       });
     }
 

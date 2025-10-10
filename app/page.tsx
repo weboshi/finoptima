@@ -1,12 +1,13 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Settings } from 'lucide-react';
+import { Settings, Menu, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Icon } from "@iconify/react";
 import Link from 'next/link';
 import ContactFormSection from '@/components/ui/ContactFormSection';
 import Footer from '@/components/ui/Footer';
+import NetworkAnimation from '@/components/ui/NetworkAnimation';
 
 
 
@@ -14,10 +15,9 @@ interface NavLinkProps {
   href?: string;
   onClick?: () => void;
   children: React.ReactNode;
-  isActive?: boolean;
 }
 
-const NavLink: React.FC<NavLinkProps> = ({ href, onClick, children, isActive = false }) => (
+const NavLink: React.FC<NavLinkProps> = ({ href, onClick, children }) => (
   <a
     href={href}
     onClick={onClick}
@@ -60,11 +60,13 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
 
 const FinOptimaLanding: React.FC = () => {
   const [activeTab, setActiveTab] = useState('voice');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+      setMobileMenuOpen(false);
     }
   };
 
@@ -126,7 +128,7 @@ const FinOptimaLanding: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       {/* Navigation */}
-      <nav className="bg-white border-gray-200 sticky top-0 z-50">
+      <nav className="bg-white border-gray-200 sticky top-0 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto py-3 px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
@@ -140,47 +142,88 @@ const FinOptimaLanding: React.FC = () => {
               </Link>
             </div>
 
-            {/* Navigation Links */}
+            {/* Desktop Navigation Links */}
             <div className="hidden md:flex items-center space-x-8 px-14 py-3 rounded-md">
               <NavLink href="#">Home</NavLink>
               <NavLink onClick={() => scrollToSection('products')}>Products</NavLink>
               <NavLink onClick={() => scrollToSection('team')}>Meet the Team</NavLink>
             </div>
 
-            {/* CTA Button */}
+            {/* Desktop CTA Button */}
             <button
               onClick={() => scrollToSection('contact')}
-              className="bg-fin-dark-blue hover:bg-blue-800 text-white px-8 py-3 rounded-md font-medium transition-colors cursor-pointer"
+              className="hidden md:block bg-fin-dark-blue hover:bg-blue-800 text-white px-8 py-3 rounded-md font-medium transition-colors cursor-pointer"
             >
               Request Demo
             </button>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100 transition-colors"
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
+
+          {/* Mobile Menu */}
+          {mobileMenuOpen && (
+            <div className="md:hidden py-4 border-t border-gray-200">
+              <div className="flex flex-col space-y-4">
+                <a
+                  href="#"
+                  className="font-medium text-black hover:text-gray-700 px-4 py-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Home
+                </a>
+                <button
+                  onClick={() => scrollToSection('products')}
+                  className="font-medium text-black hover:text-gray-700 px-4 py-2 text-left"
+                >
+                  Products
+                </button>
+                <button
+                  onClick={() => scrollToSection('team')}
+                  className="font-medium text-black hover:text-gray-700 px-4 py-2 text-left"
+                >
+                  Meet the Team
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 
       {/* Hero Section */}
       <section className="hero-section">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 pb-20">
-          <div className="text-center">
-            {/* <div className="inline-block bg-fin-blue text-white px-6 py-2 rounded-md border border-fin-blue mb-6">
-              <span className="text-sm font-medium">DeepSecure™ Fraud Detection Platform</span>
-            </div> */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              <span className="text-fin-blue">Protect Your Organization</span><br>
-              </br> from Financial Fraud
-            </h1>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 lg:pt-32 pb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column - Content */}
+            <div className="text-center lg:text-left">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                <span className="text-fin-blue">Protect Your Organization</span><br />
+                <span className="hidden lg:inline">from Financial Fraud</span>
+                <span className="lg:hidden">from<br />Financial Fraud</span>
+              </h1>
 
-            <p className="text-base sm:text-lg text-black max-w-4xl mx-auto mb-12 leading-relaxed">
-              Advanced AI-powered solutions for banks and credit unions to detect fraud, reduce false positives, and safeguard assets in real-time.
-            </p>
+              <p className="text-base sm:text-lg text-black mb-12 leading-relaxed">
+                Advanced AI-powered solutions for banks and credit unions to detect fraud, reduce false positives, and safeguard assets in real-time.
+              </p>
 
-            <button
+              <button
+                onClick={() => scrollToSection('contact')}
+                className="bg-fin-dark-blue hover:bg-blue-800 text-white px-8 py-4 rounded-md text-lg font-semibold transition-colors transform cursor-pointer"
+              >
+                Request Free Demo
+              </button>
+            </div>
 
-              onClick={() => scrollToSection('contact')}
-              className="bg-fin-dark-blue hover:bg-blue-800 text-white px-8 py-4 rounded-md text-lg font-semibold transition-colors transform cursor-pointer"
-            >
-              Request Free Demo
-            </button>
+            {/* Right Column - Animation */}
+            <div className="h-[300px] sm:h-[400px] lg:h-[600px] flex items-center justify-center w-full overflow-hidden">
+              <NetworkAnimation />
+            </div>
           </div>
         </div>
 
@@ -875,8 +918,27 @@ const FinOptimaLanding: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
           >
             <div className="grid grid-cols-1 lg:grid-cols-4">
-              {/* Left Sidebar Tabs */}
-              <div className="lg:col-span-1 bg-white border-r border-gray-200">
+              {/* Mobile Dropdown - Only visible on mobile */}
+              <div className="lg:hidden bg-white border-b border-gray-200 p-4">
+                <label htmlFor="use-case-select" className="block text-sm font-medium text-gray-700 mb-2">
+                  Select Use Case
+                </label>
+                <select
+                  id="use-case-select"
+                  value={activeTab}
+                  onChange={(e) => setActiveTab(e.target.value)}
+                  className="w-full p-3 border border-gray-300 rounded-lg bg-white text-gray-900 font-medium focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                >
+                  {tabs.map((tab) => (
+                    <option key={tab.id} value={tab.id}>
+                      {tab.title}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Desktop Left Sidebar Tabs - Hidden on mobile */}
+              <div className="hidden lg:block lg:col-span-1 bg-white border-r border-gray-200">
                 <div className="p-8 space-y-2">
                   {tabs.map((tab) => (
                     <div
