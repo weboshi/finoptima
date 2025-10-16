@@ -40,7 +40,7 @@ const ImageFraudPage: React.FC = () => {
 
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Our Solution</h2>
               <p className="text-gray-700 mb-6">
-                FinOptima's DeepSecure™ platform offers a powerful solution, leveraging AI to automatically verify identity documents and check images in real-time during online and mobile transactions. Our technology seamlessly integrates into your existing systems, providing a secure and efficient way to verify identities and checks digitally.
+                FinOptima&apos;s DeepSecure™ platform offers a powerful solution, leveraging AI to automatically verify identity documents and check images in real-time during online and mobile transactions. Our technology seamlessly integrates into your existing systems, providing a secure and efficient way to verify identities and checks digitally.
               </p>
 
               <div className="bg-blue-50 border-l-4 border-blue-600 p-6 mb-6">

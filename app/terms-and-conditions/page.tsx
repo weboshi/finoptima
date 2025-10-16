@@ -38,7 +38,7 @@ export default function TermsAndConditions() {
             <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
               <li>Use the Site in any way that violates any applicable federal, state, local, or international law or regulation</li>
               <li>Attempt to gain unauthorized access to any portion of the Site or any systems or networks connected to the Site</li>
-              <li>Engage in any conduct that restricts or inhibits anyone's use or enjoyment of the Site</li>
+              <li>Engage in any conduct that restricts or inhibits anyone&apos;s use or enjoyment of the Site</li>
               <li>Use any automated system, including robots, spiders, or scrapers, to access the Site without our prior written consent</li>
               <li>Introduce any viruses, trojan horses, worms, logic bombs, or other malicious or technologically harmful material</li>
             </ul>
@@ -97,7 +97,7 @@ export default function TermsAndConditions() {
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">9. Indemnification</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              You agree to defend, indemnify, and hold harmless FinOptima Solutions and its officers, directors, employees, contractors, agents, licensors, and suppliers from and against any claims, liabilities, damages, judgments, awards, losses, costs, expenses, or fees (including reasonable attorneys' fees) arising out of or relating to your violation of these Terms or your use of the Site.
+              You agree to defend, indemnify, and hold harmless FinOptima Solutions and its officers, directors, employees, contractors, agents, licensors, and suppliers from and against any claims, liabilities, damages, judgments, awards, losses, costs, expenses, or fees (including reasonable attorneys&apos; fees) arising out of or relating to your violation of these Terms or your use of the Site.
             </p>
           </section>
 
