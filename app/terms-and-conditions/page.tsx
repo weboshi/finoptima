@@ -19,7 +19,7 @@ export default function TermsAndConditions() {
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Acceptance of Terms</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Welcome to FinOptima Solutions ("Company," "we," "our," or "us"). By accessing or using our website located at finoptima.ai (the "Site"), you agree to be bound by these Terms and Conditions ("Terms"). If you do not agree to these Terms, please do not use our Site.
+              Welcome to FinOptima Solutions (&quot;Company,&quot; &quot;we,&quot; &quot;our,&quot; or &quot;us&quot;). By accessing or using our website located at finoptima.ai (the &quot;Site&quot;), you agree to be bound by these Terms and Conditions (&quot;Terms&quot;). If you do not agree to these Terms, please do not use our Site.
             </p>
           </section>
 
@@ -57,7 +57,7 @@ export default function TermsAndConditions() {
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">5. User Content</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              If you submit any content, feedback, suggestions, or materials to us through the Site ("User Content"), you grant FinOptima Solutions a perpetual, irrevocable, worldwide, royalty-free, and non-exclusive license to use, reproduce, modify, adapt, publish, translate, distribute, and display such User Content for any purpose.
+              If you submit any content, feedback, suggestions, or materials to us through the Site (&quot;User Content&quot;), you grant FinOptima Solutions a perpetual, irrevocable, worldwide, royalty-free, and non-exclusive license to use, reproduce, modify, adapt, publish, translate, distribute, and display such User Content for any purpose.
             </p>
           </section>
 
@@ -71,7 +71,7 @@ export default function TermsAndConditions() {
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">7. Disclaimer of Warranties</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              THE SITE IS PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS WITHOUT ANY WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. TO THE FULLEST EXTENT PERMITTED BY LAW, FINOPTIMA SOLUTIONS DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+              THE SITE IS PROVIDED ON AN &quot;AS IS&quot; AND &quot;AS AVAILABLE&quot; BASIS WITHOUT ANY WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. TO THE FULLEST EXTENT PERMITTED BY LAW, FINOPTIMA SOLUTIONS DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
               We do not warrant that the Site will be uninterrupted, secure, or error-free, or that any defects will be corrected. We make no warranties about the accuracy, reliability, completeness, or timeliness of the content on the Site.
@@ -111,7 +111,7 @@ export default function TermsAndConditions() {
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">11. Changes to Terms</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              We reserve the right to modify or replace these Terms at any time at our sole discretion. If we make material changes to these Terms, we will provide notice by posting the updated Terms on the Site and updating the "Last Updated" date. Your continued use of the Site after any such changes constitutes your acceptance of the new Terms.
+              We reserve the right to modify or replace these Terms at any time at our sole discretion. If we make material changes to these Terms, we will provide notice by posting the updated Terms on the Site and updating the &quot;Last Updated&quot; date. Your continued use of the Site after any such changes constitutes your acceptance of the new Terms.
             </p>
           </section>
 

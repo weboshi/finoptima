@@ -96,9 +96,9 @@ const Navigation: React.FC = () => {
           <div className="flex items-center">
             <Link href="/" className="block">
               <img
-                src="/Logo_v5.png"
+                src="/Logo_v2.png"
                 alt="FinOptima"
-                className="h-10 w-auto"
+                className="h-8 w-auto"
               />
             </Link>
           </div>
