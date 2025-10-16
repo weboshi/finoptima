@@ -192,9 +192,9 @@ const FinOptimaLanding: React.FC = () => {
             <div className="flex items-center">
               <Link href="/" className="block">
                 <img
-                  src="/Logo_v2.png"
+                  src="/Logo_v5.png"
                   alt="FinOptima"
-                  className="h-8 w-auto"
+                  className="h-10 w-auto"
                 />
               </Link>
             </div>
@@ -256,67 +256,67 @@ const FinOptimaLanding: React.FC = () => {
             </button>
           </div>
 
-        {/* Products Mega Menu Dropdown - Outside nav structure */}
-        {productsDropdownOpen && (
-          <div
-            className="absolute left-0 right-0 top-full w-full bg-white z-40 pt-8"
-            onMouseEnter={() => setProductsDropdownOpen(true)}
-            onMouseLeave={() => setProductsDropdownOpen(false)}
-          >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-4">
-              <div className="grid grid-cols-2 gap-2">
-                {products.map((product) => (
-                  <Link
-                    key={product.href}
-                    href={product.href}
-                    className="flex items-start p-4 rounded-lg hover:bg-gray-50 transition-colors"
-                  >
-                    <div className="flex-shrink-0 mr-4 mt-1">
-                      <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
-                        <Icon icon={product.icon} className="text-2xl text-fin-blue" />
+          {/* Products Mega Menu Dropdown - Outside nav structure */}
+          {productsDropdownOpen && (
+            <div
+              className="absolute left-0 right-0 top-full w-full bg-white z-40 pt-8"
+              onMouseEnter={() => setProductsDropdownOpen(true)}
+              onMouseLeave={() => setProductsDropdownOpen(false)}
+            >
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-4">
+                <div className="grid grid-cols-2 gap-2">
+                  {products.map((product) => (
+                    <Link
+                      key={product.href}
+                      href={product.href}
+                      className="flex items-start p-4 rounded-lg hover:bg-gray-50 transition-colors"
+                    >
+                      <div className="flex-shrink-0 mr-4 mt-1">
+                        <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                          <Icon icon={product.icon} className="text-2xl text-fin-blue" />
+                        </div>
                       </div>
-                    </div>
-                    <div className="text-left">
-                      <h3 className="font-light text-black mb-1">{product.name}</h3>
-                      <p className="text-sm text-gray-600 font-light">{product.description}</p>
-                    </div>
-                  </Link>
-                ))}
+                      <div className="text-left">
+                        <h3 className="font-light text-black mb-1">{product.name}</h3>
+                        <p className="text-sm text-gray-600 font-light">{product.description}</p>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
 
-        {/* Use Cases Mega Menu Dropdown - Outside nav structure */}
-        {useCasesDropdownOpen && (
-          <div
-            className="absolute left-0 right-0 top-full w-full bg-white z-40 pt-8"
-            onMouseEnter={() => setUseCasesDropdownOpen(true)}
-            onMouseLeave={() => setUseCasesDropdownOpen(false)}
-          >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-4">
-              <div className="grid grid-cols-2 gap-2">
-                {useCases.map((useCase, index) => (
-                  <Link
-                    key={index}
-                    href={useCase.href}
-                    className="flex items-start p-4 rounded-lg hover:bg-gray-50 transition-colors"
-                  >
-                    <div className="flex-shrink-0 mr-4 mt-1">
-                      <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
-                        <Icon icon={useCase.icon} className="text-2xl text-fin-blue" />
+          {/* Use Cases Mega Menu Dropdown - Outside nav structure */}
+          {useCasesDropdownOpen && (
+            <div
+              className="absolute left-0 right-0 top-full w-full bg-white z-40 pt-8"
+              onMouseEnter={() => setUseCasesDropdownOpen(true)}
+              onMouseLeave={() => setUseCasesDropdownOpen(false)}
+            >
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-4">
+                <div className="grid grid-cols-2 gap-2">
+                  {useCases.map((useCase, index) => (
+                    <Link
+                      key={index}
+                      href={useCase.href}
+                      className="flex items-start p-4 rounded-lg hover:bg-gray-50 transition-colors"
+                    >
+                      <div className="flex-shrink-0 mr-4 mt-1">
+                        <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                          <Icon icon={useCase.icon} className="text-2xl text-fin-blue" />
+                        </div>
                       </div>
-                    </div>
-                    <div className="text-left">
-                      <h3 className="font-light text-black mb-1">{useCase.name}</h3>
-                      <p className="text-sm text-gray-600 font-light">{useCase.description}</p>
-                    </div>
-                  </Link>
-                ))}
+                      <div className="text-left">
+                        <h3 className="font-light text-black mb-1">{useCase.name}</h3>
+                        <p className="text-sm text-gray-600 font-light">{useCase.description}</p>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
 
           {/* Mobile Menu */}
           {mobileMenuOpen && (
