@@ -1,59 +1,15 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
 import Footer from '@/components/ui/Footer';
-
-interface NavLinkProps {
-  href: string;
-  children: React.ReactNode;
-}
-
-const NavLink: React.FC<NavLinkProps> = ({ href, children }) => (
-  <Link
-    href={href}
-    className="font-medium flex items-center cursor-pointer text-black hover:text-gray-700"
-  >
-    {children}
-  </Link>
-);
+import Navigation from '@/components/ui/Navigation';
 
 export default function PrivacyPolicy() {
 
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="bg-white border-gray-200 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto py-3 px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            {/* Logo */}
-            <div className="flex items-center">
-              <Link href="/" className="block">
-                <img
-                  src="/Fin_Logo.png"
-                  alt="FinOptima"
-                  className="h-8 w-auto"
-                />
-              </Link>
-            </div>
-
-            {/* Navigation Links */}
-            <div className="hidden md:flex items-center space-x-8 px-14 py-3 rounded-md">
-              <NavLink href="/">Home</NavLink>
-              <NavLink href="/#products">Products</NavLink>
-              <NavLink href="/#team">Meet the Team</NavLink>
-            </div>
-
-            {/* CTA Button */}
-            <Link
-              href="/#contact"
-              className="bg-fin-dark-blue hover:bg-blue-800 text-white px-8 py-3 rounded-md font-medium transition-colors cursor-pointer inline-flex items-center"
-            >
-              Request Demo
-            </Link>
-          </div>
-        </div>
-      </nav>
+      <Navigation />
 
       {/* Privacy Policy Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -254,7 +210,7 @@ export default function PrivacyPolicy() {
 
           </p>
           <p className="text-gray-700 mb-4">
-            For data protection inquiries in specific jurisdictions, you may also contact our Data Protection Officer at: dpo@finoptima.com
+            For data protection inquiries in specific jurisdictions, you may also contact our Data Protection Officer at: info@finoptima.com
           </p>
 
           <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">13. Jurisdiction-Specific Rights</h2>
