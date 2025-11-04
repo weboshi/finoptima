@@ -3,8 +3,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import Footer from '@/components/ui/Footer';
-import Navigation from '@/components/ui/Navigation';
 
 const OnboardPage: React.FC = () => {
   return (
@@ -45,6 +43,16 @@ const OnboardPage: React.FC = () => {
                   Verification & Secure<br />
                   Onboarding</span>
               </motion.h2>
+
+              <motion.p
+                className="text-lg text-black mb-6 text-center lg:text-left leading-relaxed font-light"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.4 }}
+              >
+                AI-powered identity verification detecting synthetic identities and deepfakes at account opening.
+              </motion.p>
 
               <motion.div
                 className="w-16 h-px bg-blue-600 mb-8 mx-auto lg:mx-0"
@@ -136,8 +144,6 @@ const OnboardPage: React.FC = () => {
           </Link>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };

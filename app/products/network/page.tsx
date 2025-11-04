@@ -3,15 +3,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import Footer from '@/components/ui/Footer';
-import Navigation from '@/components/ui/Navigation';
 
 const NetworkPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-      {/* Navigation */}
-      <Navigation />
-
       {/* DeepSecure Network Section */}
       <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -26,6 +21,16 @@ const NetworkPage: React.FC = () => {
               <span className="text-fin-blue font-normal mb-2 inline-block">DeepSecure™</span> <span className="font-normal mb-2 inline-block">Network</span><br />
               <span className="font-light">Collaborative Fraud Ring Detection & Intelligence Sharing</span>
             </motion.h2>
+
+            <motion.p
+              className="text-lg text-black mb-6 text-center leading-relaxed font-light max-w-3xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.4 }}
+            >
+              Collaborative network detecting fraud rings through secure intelligence sharing across institutions.
+            </motion.p>
 
             <motion.div
               className="w-16 h-px bg-blue-600 mb-8 mx-auto"
@@ -103,8 +108,6 @@ const NetworkPage: React.FC = () => {
           </Link>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };

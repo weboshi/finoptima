@@ -1,16 +1,11 @@
 'use client';
 
 import React from 'react';
-import Footer from '@/components/ui/Footer';
-import Navigation from '@/components/ui/Navigation';
 
 export default function PrivacyPolicy() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <Navigation />
-
       {/* Privacy Policy Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">Privacy Policy</h1>
@@ -231,8 +226,6 @@ export default function PrivacyPolicy() {
           </p>
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 }

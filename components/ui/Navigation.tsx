@@ -139,6 +139,7 @@ const Navigation: React.FC = () => {
               )}
             </div>
 
+            <NavLink href="/resources">Resources</NavLink>
             <NavLink href="/#team">Meet the Team</NavLink>
           </div>
 
@@ -302,6 +303,14 @@ const Navigation: React.FC = () => {
                   </div>
                 )}
               </div>
+
+              <Link
+                href="/resources"
+                className="font-medium text-black hover:text-gray-700 px-4 py-2 text-left"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Resources
+              </Link>
 
               <Link
                 href="/#team"

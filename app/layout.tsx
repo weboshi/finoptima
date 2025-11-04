@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Navigation from "@/components/ui/Navigation";
+import Footer from "@/components/ui/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -8,7 +10,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "FinOptima",
-  description: "Catch more fraud with fewer false positives. DeepSecure agents, deliver industry-leading accuracy, particularly for call center fraud and account takeovers.",
+  description: "The Collaborative AI Shield for Financial Institutions.",
 };
 
 export default function RootLayout({
@@ -21,7 +23,9 @@ export default function RootLayout({
       <body
         className={inter.className}
       >
+        <Navigation />
         {children}
+        <Footer />
       </body>
     </html>
   );

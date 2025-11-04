@@ -1,32 +1,12 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Settings, Menu, X, ChevronDown } from 'lucide-react';
+import { Settings } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Icon } from "@iconify/react";
-import Link from 'next/link';
 import ContactFormSection from '@/components/ui/ContactFormSection';
-import Footer from '@/components/ui/Footer';
 import NetworkAnimation from '@/components/ui/NetworkAnimation';
 import TrustedByCarousel from '@/components/ui/TrustedByCarousel';
-
-
-
-interface NavLinkProps {
-  href?: string;
-  onClick?: () => void;
-  children: React.ReactNode;
-}
-
-const NavLink: React.FC<NavLinkProps> = ({ href, onClick, children }) => (
-  <a
-    href={href}
-    onClick={onClick}
-    className="font-medium flex items-center cursor-pointer text-black hover:text-gray-700"
-  >
-    {children}
-  </a>
-);
 
 interface FeatureCardProps {
   icon: React.ReactNode;
@@ -61,71 +41,6 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
 
 const FinOptimaLanding: React.FC = () => {
   const [activeTab, setActiveTab] = useState('voice');
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
-  const [useCasesDropdownOpen, setUseCasesDropdownOpen] = useState(false);
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setMobileMenuOpen(false);
-    }
-  };
-
-  const products = [
-    {
-      name: 'DeepSecure™ Onboard',
-      description: 'Intelligent Identity Verification',
-      href: '/products/onboard',
-      icon: 'material-symbols:how-to-reg'
-    },
-    {
-      name: 'DeepSecure™ Shield',
-      description: 'Real-Time Account Protection',
-      href: '/products/shield',
-      icon: 'material-symbols:shield-locked'
-    },
-    {
-      name: 'DeepSecure™ CheckGuard',
-      description: 'Advanced Check Fraud Prevention',
-      href: '/products/checkguard',
-      icon: 'material-symbols:check-circle'
-    },
-    {
-      name: 'DeepSecure™ Network',
-      description: 'Collaborative Fraud Detection',
-      href: '/products/network',
-      icon: 'material-symbols:hub'
-    }
-  ];
-
-  const useCases = [
-    {
-      name: 'Account Opening & Onboarding',
-      description: 'Multi-layered identity verification',
-      icon: 'material-symbols:person-add',
-      href: '/use-cases/account-opening'
-    },
-    {
-      name: 'Image-Based Fraud Protection',
-      description: 'Identity and Check Image verification',
-      icon: 'material-symbols:document-scanner',
-      href: '/use-cases/image-fraud'
-    },
-    {
-      name: 'Call Center Security',
-      description: 'Voice authentication and fraud prevention',
-      icon: 'material-symbols:headset-mic',
-      href: '/use-cases/call-center'
-    },
-    {
-      name: 'Secure Loan Approvals',
-      description: 'AI-powered risk assessment',
-      icon: 'material-symbols:payments',
-      href: '/use-cases/loan-approvals'
-    }
-  ];
 
   const tabs = [
     {
@@ -147,7 +62,7 @@ const FinOptimaLanding: React.FC = () => {
       content: {
         title: 'Protect from Image-Based Fraud - Identity and Check Image',
         subtitle: 'Community banks and credit unions face a growing threat from sophisticated fraudsters using fake IDs and altered checks.',
-        description: 'Finoptima&apos;s DeepSecure™ platform offers a powerful solution, leveraging AI to automatically verify identity documents and check images in real-time during online and mobile transactions. Our technology seamlessly integrates into your existing systems, providing a secure and efficient way to verify identities and checks digitally.',
+        description: 'Finoptima DeepSecure™ platform offers a powerful solution, leveraging AI to automatically verify identity documents and check images in real-time during online and mobile transactions. Our technology seamlessly integrates into your existing systems, providing a secure and efficient way to verify identities and checks digitally.',
         benefit: 'DeepSecure™ reduces fraud losses by up to 15% and streamlines operations by cutting manual review efforts by 40%.',
         headerIcon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
       }
@@ -184,233 +99,6 @@ const FinOptimaLanding: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-      {/* Navigation */}
-      <nav className="bg-white border-gray-200 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto py-3 px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            {/* Logo */}
-            <div className="flex items-center">
-              <Link href="/" className="block">
-                <img
-                  src="/Logo_v2.png"
-                  alt="FinOptima"
-                  className="h-8 w-auto"
-                />
-              </Link>
-            </div>
-
-            {/* Desktop Navigation Links */}
-            <div className="hidden md:flex items-center space-x-8 px-14 py-3 rounded-md">
-              <NavLink href="#">Home</NavLink>
-
-              {/* Products Mega Menu */}
-              <div
-                className="relative"
-                onMouseEnter={() => setProductsDropdownOpen(true)}
-                onMouseLeave={() => setProductsDropdownOpen(false)}
-              >
-                <button className="font-medium flex items-center cursor-pointer text-black hover:text-gray-700 py-2">
-                  Products
-                  <ChevronDown className="ml-1 w-4 h-4" />
-                </button>
-                {/* Invisible bridge to prevent gap */}
-                {productsDropdownOpen && (
-                  <div className="absolute left-0 right-0 h-8 top-full" />
-                )}
-              </div>
-
-              {/* Use Cases Mega Menu */}
-              <div
-                className="relative"
-                onMouseEnter={() => setUseCasesDropdownOpen(true)}
-                onMouseLeave={() => setUseCasesDropdownOpen(false)}
-              >
-                <button className="font-medium flex items-center cursor-pointer text-black hover:text-gray-700 py-2">
-                  Use Cases
-                  <ChevronDown className="ml-1 w-4 h-4" />
-                </button>
-                {/* Invisible bridge to prevent gap */}
-                {useCasesDropdownOpen && (
-                  <div className="absolute left-0 right-0 h-8 top-full" />
-                )}
-              </div>
-
-              <NavLink onClick={() => scrollToSection('team')}>Meet the Team</NavLink>
-            </div>
-
-            {/* Desktop CTA Button */}
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="hidden md:block bg-fin-dark-blue hover:bg-blue-800 text-white px-8 py-3 rounded-md font-medium transition-colors cursor-pointer"
-            >
-              Request Demo
-            </button>
-
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100 transition-colors"
-              aria-label="Toggle menu"
-            >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
-
-          {/* Products Mega Menu Dropdown - Outside nav structure */}
-          {productsDropdownOpen && (
-            <div
-              className="absolute left-0 right-0 top-full w-full bg-white z-40 pt-8"
-              onMouseEnter={() => setProductsDropdownOpen(true)}
-              onMouseLeave={() => setProductsDropdownOpen(false)}
-            >
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-4">
-                <div className="grid grid-cols-2 gap-2">
-                  {products.map((product) => (
-                    <Link
-                      key={product.href}
-                      href={product.href}
-                      className="flex items-start p-4 rounded-lg hover:bg-gray-50 transition-colors"
-                    >
-                      <div className="flex-shrink-0 mr-4 mt-1">
-                        <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
-                          <Icon icon={product.icon} className="text-2xl text-fin-blue" />
-                        </div>
-                      </div>
-                      <div className="text-left">
-                        <h3 className="font-light text-black mb-1">{product.name}</h3>
-                        <p className="text-sm text-gray-600 font-light">{product.description}</p>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* Use Cases Mega Menu Dropdown - Outside nav structure */}
-          {useCasesDropdownOpen && (
-            <div
-              className="absolute left-0 right-0 top-full w-full bg-white z-40 pt-8"
-              onMouseEnter={() => setUseCasesDropdownOpen(true)}
-              onMouseLeave={() => setUseCasesDropdownOpen(false)}
-            >
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-4">
-                <div className="grid grid-cols-2 gap-2">
-                  {useCases.map((useCase, index) => (
-                    <Link
-                      key={index}
-                      href={useCase.href}
-                      className="flex items-start p-4 rounded-lg hover:bg-gray-50 transition-colors"
-                    >
-                      <div className="flex-shrink-0 mr-4 mt-1">
-                        <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
-                          <Icon icon={useCase.icon} className="text-2xl text-fin-blue" />
-                        </div>
-                      </div>
-                      <div className="text-left">
-                        <h3 className="font-light text-black mb-1">{useCase.name}</h3>
-                        <p className="text-sm text-gray-600 font-light">{useCase.description}</p>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* Mobile Menu */}
-          {mobileMenuOpen && (
-            <div className="md:hidden py-4 border-t border-gray-200">
-              <div className="flex flex-col space-y-4">
-                <a
-                  href="#"
-                  className="font-medium text-black hover:text-gray-700 px-4 py-2"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Home
-                </a>
-
-                {/* Mobile Products Dropdown */}
-                <div>
-                  <button
-                    onClick={() => setProductsDropdownOpen(!productsDropdownOpen)}
-                    className="font-medium text-black hover:text-gray-700 px-4 py-2 text-left w-full flex items-center justify-between"
-                  >
-                    Products
-                    <ChevronDown className={`w-4 h-4 transition-transform ${productsDropdownOpen ? 'rotate-180' : ''}`} />
-                  </button>
-                  {productsDropdownOpen && (
-                    <div className="mt-2 space-y-2 bg-gray-50 rounded-lg p-2">
-                      {products.map((product) => (
-                        <Link
-                          key={product.href}
-                          href={product.href}
-                          className="flex items-start space-x-3 p-3 rounded-lg hover:bg-white transition-colors"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          <div className="flex-shrink-0">
-                            <div className="w-10 h-10 bg-fin-blue rounded-lg flex items-center justify-center">
-                              <Icon icon={product.icon} className="text-xl text-white" />
-                            </div>
-                          </div>
-                          <div>
-                            <h3 className="font-bold text-sm text-gray-900">{product.name}</h3>
-                            <p className="text-xs text-gray-600">{product.description}</p>
-                          </div>
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-
-                {/* Mobile Use Cases Dropdown */}
-                <div>
-                  <button
-                    onClick={() => setUseCasesDropdownOpen(!useCasesDropdownOpen)}
-                    className="font-medium text-black hover:text-gray-700 px-4 py-2 text-left w-full flex items-center justify-between"
-                  >
-                    Use Cases
-                    <ChevronDown className={`w-4 h-4 transition-transform ${useCasesDropdownOpen ? 'rotate-180' : ''}`} />
-                  </button>
-                  {useCasesDropdownOpen && (
-                    <div className="mt-2 space-y-2 bg-gray-50 rounded-lg p-2">
-                      {useCases.map((useCase, index) => (
-                        <Link
-                          key={index}
-                          href={useCase.href}
-                          onClick={() => {
-                            setMobileMenuOpen(false);
-                            setUseCasesDropdownOpen(false);
-                          }}
-                          className="flex items-start space-x-3 p-3 rounded-lg hover:bg-white transition-colors"
-                        >
-                          <div className="flex-shrink-0">
-                            <div className="w-10 h-10 bg-fin-blue rounded-lg flex items-center justify-center">
-                              <Icon icon={useCase.icon} className="text-xl text-white" />
-                            </div>
-                          </div>
-                          <div>
-                            <h3 className="font-bold text-sm text-gray-900">{useCase.name}</h3>
-                            <p className="text-xs text-gray-600">{useCase.description}</p>
-                          </div>
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-
-                <button
-                  onClick={() => scrollToSection('team')}
-                  className="font-medium text-black hover:text-gray-700 px-4 py-2 text-left"
-                >
-                  Meet the Team
-                </button>
-              </div>
-            </div>
-          )}
-        </div>
-      </nav>
-
       {/* Hero Section */}
       <section className="hero-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 lg:pt-32 pb-20">
@@ -427,12 +115,12 @@ const FinOptimaLanding: React.FC = () => {
                 Advanced AI-powered solutions for banks and credit unions to detect fraud, reduce false positives, and safeguard assets in real-time.
               </p>
 
-              <button
-                onClick={() => scrollToSection('contact')}
-                className="bg-fin-dark-blue hover:bg-blue-800 text-white px-8 py-4 rounded-md text-lg font-semibold transition-colors transform cursor-pointer"
+              <a
+                href="#contact"
+                className="bg-fin-dark-blue hover:bg-blue-800 text-white px-8 py-4 rounded-md text-lg font-semibold transition-colors transform cursor-pointer inline-block text-center"
               >
                 Request Free Demo
-              </button>
+              </a>
             </div>
 
             {/* Right Column - Animation */}
@@ -472,7 +160,9 @@ const FinOptimaLanding: React.FC = () => {
         </div>
 
         {/* Trusted By Section */}
-        <TrustedByCarousel />
+        <div id="alliances">
+          <TrustedByCarousel />
+        </div>
       </section>
 
       {/* Why FinOptima Section */}
@@ -739,6 +429,16 @@ const FinOptimaLanding: React.FC = () => {
                   Onboarding</span>
               </motion.h2>
 
+              <motion.p
+                className="text-lg text-black mb-6 text-center lg:text-left leading-relaxed font-light"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.4 }}
+              >
+                AI-powered identity verification detecting synthetic identities and deepfakes at account opening.
+              </motion.p>
+
               <motion.div
                 className="w-16 h-px bg-blue-600 mb-8 mx-auto lg:mx-0"
                 initial={{ width: 0 }}
@@ -815,7 +515,8 @@ const FinOptimaLanding: React.FC = () => {
         </div>
       </section>
 
-      {/* DeepSecure Shield Section */}
+      {/* DeepSecure 
+       Section */}
       <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -870,6 +571,16 @@ const FinOptimaLanding: React.FC = () => {
                   Transaction Protection,<br />
                   Including Voice Fraud</span>
               </motion.h2>
+
+              <motion.p
+                className="text-lg text-black mb-6 text-center lg:text-left leading-relaxed font-light"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.4 }}
+              >
+                Unified AI platform preventing account takeovers, check fraud, and voice impersonation in real time.
+              </motion.p>
 
               <motion.div
                 className="w-16 h-px bg-blue-600 mb-8 mx-auto lg:mx-0"
@@ -947,6 +658,16 @@ const FinOptimaLanding: React.FC = () => {
                 <span className="font-light">Advanced Check Fraud<br />
                   Prevention</span>
               </motion.h2>
+
+              <motion.p
+                className="text-lg text-black mb-6 text-center lg:text-left leading-relaxed font-light"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.4 }}
+              >
+                Real-time AI analysis detecting check washing, alterations, and counterfeit checks instantly.
+              </motion.p>
 
               <motion.div
                 className="w-16 h-px bg-blue-600 mb-8 mx-auto lg:mx-0"
@@ -1033,6 +754,16 @@ const FinOptimaLanding: React.FC = () => {
               <span className="text-fin-blue font-normal mb-2 inline-block">DeepSecure™</span> <span className="font-normal mb-2 inline-block">Network</span><br />
               <span className="font-light">Collaborative Fraud Ring Detection & Intelligence Sharing</span>
             </motion.h2>
+
+            <motion.p
+              className="text-lg text-black mb-6 text-center leading-relaxed font-light max-w-3xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.4 }}
+            >
+              Collaborative network detecting fraud rings through secure intelligence sharing across institutions.
+            </motion.p>
 
             <motion.div
               className="w-16 h-px bg-blue-600 mb-8 mx-auto"
@@ -1197,7 +928,7 @@ const FinOptimaLanding: React.FC = () => {
                   {/* Main Visual Content */}
                   <div className="flex-1">
                     <div className="w-full">
-                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                      <div className="grid grid-cols-1 gap-8 items-start">
                         {/* Left Content - Text */}
                         <div className="space-y-6">
                           <div className="bg-white rounded-2xl p-6 shadow-sm border">
@@ -1214,68 +945,78 @@ const FinOptimaLanding: React.FC = () => {
                           </div>
                         </div>
 
-                        {/* Right Content - UI Mockup */}
+                        {/* Right Content - 3-Step Visual */}
                         <div className="space-y-6">
-                          <div className="bg-white rounded-2xl p-6 shadow-sm border">
+                          <div className="bg-white rounded-2xl p-8 shadow-sm border">
                             {activeTab === 'voice' && (
-                              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-6">
-                                <div className="flex items-center justify-between mb-6">
-                                  <h5 className="text-lg font-semibold text-gray-900">Account Verification</h5>
-                                  <div className="flex items-center space-x-2">
-                                    <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-                                    <span className="text-xs text-blue-600 font-medium">PROCESSING</span>
-                                  </div>
-                                </div>
-
-                                <div className="space-y-4">
-                                  <div className="bg-white rounded-lg p-4">
-                                    <div className="flex items-center space-x-3 mb-3">
-                                      <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-                                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                              <div>
+                                <h5 className="text-lg font-semibold text-gray-900 mb-8 text-center">How It Works</h5>
+                                <div className="space-y-6">
+                                  {/* Step 1: Voice Verification */}
+                                  <div className="flex items-start space-x-4">
+                                    <div className="flex-shrink-0">
+                                      <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center">
+                                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
                                         </svg>
                                       </div>
-                                      <div>
-                                        <div className="text-sm font-medium text-gray-900">Voice Pattern Analysis</div>
-                                        <div className="text-xs text-gray-600">Biometric verification complete</div>
-                                      </div>
                                     </div>
-                                    <div className="w-full bg-gray-200 rounded-full h-2">
-                                      <div className="bg-green-500 h-2 rounded-full w-full"></div>
+                                    <div className="flex-1">
+                                      <div className="flex items-center space-x-2 mb-2">
+                                        <span className="text-2xl font-bold text-blue-600">1</span>
+                                        <h6 className="text-lg font-bold text-gray-900">Voice Verification</h6>
+                                      </div>
+                                      <p className="text-gray-600 text-sm">Analyze unique voice patterns and biometric markers to verify caller identity in real-time.</p>
                                     </div>
                                   </div>
 
-                                  <div className="bg-white rounded-lg p-4">
-                                    <div className="flex items-center space-x-3 mb-3">
-                                      <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
-                                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                  {/* Arrow */}
+                                  <div className="flex justify-center">
+                                    <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                                    </svg>
+                                  </div>
+
+                                  {/* Step 2: Face Verification */}
+                                  <div className="flex items-start space-x-4">
+                                    <div className="flex-shrink-0">
+                                      <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center">
+                                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                                         </svg>
                                       </div>
-                                      <div>
-                                        <div className="text-sm font-medium text-gray-900">Facial Recognition</div>
-                                        <div className="text-xs text-gray-600">Processing live image</div>
-                                      </div>
                                     </div>
-                                    <div className="w-full bg-gray-200 rounded-full h-2">
-                                      <div className="bg-blue-500 h-2 rounded-full w-3/4 animate-pulse"></div>
+                                    <div className="flex-1">
+                                      <div className="flex items-center space-x-2 mb-2">
+                                        <span className="text-2xl font-bold text-blue-600">2</span>
+                                        <h6 className="text-lg font-bold text-gray-900">Face Verification</h6>
+                                      </div>
+                                      <p className="text-gray-600 text-sm">Advanced facial recognition detects deepfakes and confirms live presence during account setup.</p>
                                     </div>
                                   </div>
 
-                                  <div className="bg-white rounded-lg p-4">
-                                    <div className="flex items-center space-x-3 mb-3">
-                                      <div className="w-8 h-8 bg-gray-400 rounded-full flex items-center justify-center">
-                                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  {/* Arrow */}
+                                  <div className="flex justify-center">
+                                    <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                                    </svg>
+                                  </div>
+
+                                  {/* Step 3: Document Verification */}
+                                  <div className="flex items-start space-x-4">
+                                    <div className="flex-shrink-0">
+                                      <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center">
+                                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                         </svg>
                                       </div>
-                                      <div>
-                                        <div className="text-sm font-medium text-gray-900">Document Verification</div>
-                                        <div className="text-xs text-gray-600">Awaiting document scan</div>
-                                      </div>
                                     </div>
-                                    <div className="w-full bg-gray-200 rounded-full h-2">
-                                      <div className="bg-gray-400 h-2 rounded-full w-1/4"></div>
+                                    <div className="flex-1">
+                                      <div className="flex items-center space-x-2 mb-2">
+                                        <span className="text-2xl font-bold text-blue-600">3</span>
+                                        <h6 className="text-lg font-bold text-gray-900">Document Verification</h6>
+                                      </div>
+                                      <p className="text-gray-600 text-sm">AI-powered document analysis validates IDs and detects forged or altered credentials instantly.</p>
                                     </div>
                                   </div>
                                 </div>
@@ -1474,70 +1215,6 @@ const FinOptimaLanding: React.FC = () => {
                               </div>
                             )}
                           </div>
-
-                          {activeTab === 'voice' && (
-                            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-200">
-                              <h5 className="font-semibold text-gray-900 mb-4">3-Step Process</h5>
-                              <div className="grid grid-cols-3 gap-3">
-                                <div className="text-center p-3 bg-white rounded-lg">
-                                  <div className="text-lg font-bold text-blue-600">1</div>
-                                  <div className="text-xs text-gray-600">Voice Analysis</div>
-                                </div>
-                                <div className="text-center p-3 bg-white rounded-lg">
-                                  <div className="text-lg font-bold text-blue-600">2</div>
-                                  <div className="text-xs text-gray-600">Facial Recognition</div>
-                                </div>
-                                <div className="text-center p-3 bg-white rounded-lg">
-                                  <div className="text-lg font-bold text-blue-600">3</div>
-                                  <div className="text-xs text-gray-600">Document Verification</div>
-                                </div>
-                              </div>
-                            </div>
-                          )}
-
-                          {activeTab === 'check' && (
-                            <div className="bg-white rounded-lg p-4 border">
-                              <div className="flex items-center justify-between mb-4">
-                                <h5 className="font-semibold text-gray-900">Analysis Status</h5>
-                                <div className="flex items-center space-x-2">
-                                  <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-                                  <span className="text-xs text-blue-600 font-medium">ANALYZING</span>
-                                </div>
-                              </div>
-                              <div className="space-y-3">
-                                <div className="flex items-center justify-between p-3 bg-blue-50 rounded-lg">
-                                  <span className="text-sm font-medium text-gray-900">ID Document</span>
-                                  <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">VERIFIED</span>
-                                </div>
-                                <div className="flex items-center justify-between p-3 bg-yellow-50 rounded-lg">
-                                  <span className="text-sm font-medium text-gray-900">Check Image</span>
-                                  <span className="text-xs bg-yellow-100 text-yellow-700 px-2 py-1 rounded-full">REVIEWING</span>
-                                </div>
-                              </div>
-                            </div>
-                          )}
-
-                          {activeTab === 'network' && (
-                            <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg p-4 border border-purple-200">
-                              <h5 className="font-semibold text-gray-900 mb-4">Voice Metrics</h5>
-                              <div className="grid grid-cols-2 gap-4">
-                                <div className="bg-white rounded-lg p-3">
-                                  <div className="flex items-center space-x-2 mb-2">
-                                    <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                                    <span className="text-xs font-medium text-gray-700">Active Call</span>
-                                  </div>
-                                  <div className="text-sm font-bold text-green-600">94% Match</div>
-                                </div>
-                                <div className="bg-white rounded-lg p-3">
-                                  <div className="flex items-center space-x-2 mb-2">
-                                    <div className="w-3 h-3 bg-blue-400 rounded-full"></div>
-                                    <span className="text-xs font-medium text-gray-700">Security</span>
-                                  </div>
-                                  <div className="text-sm font-bold text-blue-600">High</div>
-                                </div>
-                              </div>
-                            </div>
-                          )}
                         </div>
                       </div>
                     </div>
@@ -1601,6 +1278,14 @@ const FinOptimaLanding: React.FC = () => {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Anat Goldstein</h3>
               <p className="text-fin-blue font-medium mb-4">Co-Founder & FinTech Strategist</p>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mb-4 text-fin-blue hover:text-blue-700 transition-colors"
+              >
+                <Icon icon="mdi:linkedin" className="text-3xl" />
+              </a>
               <p className="text-black leading-relaxed font-light">
                 FinTech strategist and co-founder with an MS in FinTech from NYU Stern. Background in investment banking (M&A, capital raising), VC/PE, and RegTech innovation. Angel investor and judge in the Most Fundable Companies Competition, bringing global, cross-sector expertise to financial risk and compliance.
               </p>
@@ -1625,6 +1310,14 @@ const FinOptimaLanding: React.FC = () => {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Biswajit K. Lima</h3>
               <p className="text-fin-blue font-medium mb-4">Chief Technology Officer</p>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mb-4 text-fin-blue hover:text-blue-700 transition-colors"
+              >
+                <Icon icon="mdi:linkedin" className="text-3xl" />
+              </a>
               <p className="text-black leading-relaxed font-light">
                 Financial services technology leader with 20+ years of global experience building scalable fraud and risk platforms. EMBA from Brown University, Advanced ML/AI from Stanford. Former NASDAQ, Deutsche Bank, Barclays, and Macquarie Bank.
               </p>
@@ -1649,8 +1342,172 @@ const FinOptimaLanding: React.FC = () => {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Farook Sattar</h3>
               <p className="text-fin-blue font-medium mb-4">Senior Researcher and Advisor</p>
-              <p className="text-black leading-relaxed font-light">
+              <p className="text-black leading-relaxed font-light mb-4">
                 30+ years of research experience with 150+ publications in signal and image processing, speech/audio, vision, and AI/ML systems. PhD from Lund University. Former engineer, educator, and research scientist.
+              </p>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-fin-blue hover:bg-blue-700 text-white transition-colors"
+              >
+                <Icon icon="mdi:linkedin" className="text-xl" />
+              </a>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Advisors Section */}
+      <section className="bg-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Header */}
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <motion.h2
+              className="text-4xl sm:text-5xl lg:text-[52px] font-normal mb-6 leading-tight text-gray-900"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+            >
+              <span className="text-fin-blue">Advisors & Industry Experts</span> Backing FinOptima
+            </motion.h2>
+            <motion.p
+              className="text-lg text-black max-w-3xl mx-auto leading-relaxed font-light"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.4 }}
+            >
+              Our advisory board brings decades of combined expertise in financial services, fraud prevention, and regulatory compliance.
+            </motion.p>
+          </motion.div>
+
+          {/* Advisors Grid */}
+          <div className="flex flex-wrap justify-center gap-12 max-w-6xl mx-auto">
+            {/* Advisor 1 */}
+            <motion.div
+              className="text-center w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-2rem)]"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <div className="mb-6">
+                <div className="w-48 h-48 mx-auto rounded-full overflow-hidden bg-gray-200">
+                  <img
+                    src="/placeholder-advisor-1.jpg"
+                    alt="Farook Sattar"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Farook Sattar</h3>
+              <p className="text-fin-blue font-medium mb-4">Banking Security Advisor</p>
+              <p className="text-black leading-relaxed font-light">
+                Former Chief Risk Officer at a Fortune 500 financial institution with 25+ years of experience in fraud prevention and regulatory compliance.
+              </p>
+            </motion.div>
+
+            {/* Advisor 2 */}
+            <motion.div
+              className="text-center w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-2rem)]"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <div className="mb-6">
+                <div className="w-48 h-48 mx-auto rounded-full overflow-hidden bg-gray-200">
+                  <img
+                    src="/placeholder-advisor-2.jpg"
+                    alt="Pamela Cytron"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Pamela Cytron</h3>
+              <p className="text-fin-blue font-medium mb-4">AI & Machine Learning Expert</p>
+              <p className="text-black leading-relaxed font-light">
+                Leading AI researcher with expertise in deep learning and pattern recognition. Previously led AI initiatives at major tech companies.
+              </p>
+            </motion.div>
+
+            {/* Advisor 3 */}
+            <motion.div
+              className="text-center w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-2rem)]"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <div className="mb-6">
+                <div className="w-48 h-48 mx-auto rounded-full overflow-hidden bg-gray-200">
+                  <img
+                    src="/placeholder-advisor-3.jpg"
+                    alt="Hamza Qadir"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Hamza Qadir</h3>
+              <p className="text-fin-blue font-medium mb-4">RegTech Compliance Specialist</p>
+              <p className="text-black leading-relaxed font-light">
+                Former federal banking regulator with deep expertise in BSA/AML compliance and emerging fraud schemes affecting community financial institutions.
+              </p>
+            </motion.div>
+
+            {/* Advisor 4 */}
+            <motion.div
+              className="text-center w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-2rem)]"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <div className="mb-6">
+                <div className="w-48 h-48 mx-auto rounded-full overflow-hidden bg-gray-200">
+                  <img
+                    src="/placeholder-advisor-4.jpg"
+                    alt="Ronen Lamdan"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Ronen Lamdan</h3>
+              <p className="text-fin-blue font-medium mb-4">Credit Union Technology Advisor</p>
+              <p className="text-black leading-relaxed font-light">
+                Veteran credit union executive with 30+ years leading digital transformation and fraud prevention initiatives across multiple institutions.
+              </p>
+            </motion.div>
+
+            {/* Advisor 5 */}
+            <motion.div
+              className="text-center w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-2rem)]"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+            >
+              <div className="mb-6">
+                <div className="w-48 h-48 mx-auto rounded-full overflow-hidden bg-gray-200">
+                  <img
+                    src="/placeholder-advisor-5.jpg"
+                    alt="Dan Williams"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Dan Williams</h3>
+              <p className="text-fin-blue font-medium mb-4">Cybersecurity & Identity Verification Expert</p>
+              <p className="text-black leading-relaxed font-light">
+                Renowned cybersecurity researcher specializing in biometric authentication and identity theft prevention. PhD in Computer Science from MIT.
               </p>
             </motion.div>
           </div>
@@ -1658,7 +1515,7 @@ const FinOptimaLanding: React.FC = () => {
       </section>
 
       {/* Thought Leadership Section */}
-      <section className="bg-white py-20">
+      <section className="bg-gray-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <motion.div
@@ -1761,7 +1618,6 @@ const FinOptimaLanding: React.FC = () => {
       </section>
 
       <ContactFormSection />
-      <Footer />
       {/* Mobile Menu Button Hidden on Desktop */}
       <div className="md:hidden fixed bottom-6 right-6">
         <button className="bg-blue-600 text-white p-3 rounded-full shadow-lg">

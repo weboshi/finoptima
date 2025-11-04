@@ -3,15 +3,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import Footer from '@/components/ui/Footer';
-import Navigation from '@/components/ui/Navigation';
 
 const AccountOpeningPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-      {/* Navigation */}
-      <Navigation />
-
       {/* Content Section */}
       <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -30,7 +25,7 @@ const AccountOpeningPage: React.FC = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <div className="grid grid-cols-1 gap-12 items-start">
             {/* Left Column - Content */}
             <div className="prose prose-lg max-w-none">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">The Challenge</h2>
@@ -160,8 +155,6 @@ const AccountOpeningPage: React.FC = () => {
           </Link>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };
