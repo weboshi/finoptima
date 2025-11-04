@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Navigation from '@/components/ui/Navigation';
 
 const OnboardPage: React.FC = () => {
   return (
