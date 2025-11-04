@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { Icon } from "@iconify/react";
 
 const Footer = () => {
     return (
@@ -15,6 +16,14 @@ const Footer = () => {
                                 <span className="text-white">Optima Solutions</span>
                             </span>
                         </div>
+                        <a
+                            href="https://www.linkedin.com/company/finoptima-solutions/posts/?feedView=all"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-gray-400 hover:text-white transition-colors inline-block"
+                        >
+                            <Icon icon="mdi:linkedin" className="text-3xl" />
+                        </a>
                     </div>
 
                     {/* Product Column */}

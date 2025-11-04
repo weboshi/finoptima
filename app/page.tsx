@@ -230,10 +230,10 @@ const FinOptimaLanding: React.FC = () => {
             >
               <div className="flex flex-col h-full">
                 <h3 className="text-2xl font-medium mb-6 leading-relaxed">
-                  Combat Deepfakes and Synthetic Identities
+                  Unified Intelligence
                 </h3>
                 <p className="text-black font-light leading-relaxed mb-8 flex-grow">
-                  Detect and block advanced fabricated identities that slip past conventional verification systems, preventing fraudulent account openings and financial losses.
+                  Break data silos and connect behavioral, voice, and transaction signals in one platform.
                 </p>
                 <div className="mt-auto">
                   <div className="w-20 h-20 flex items-center justify-flex-start">
@@ -256,14 +256,14 @@ const FinOptimaLanding: React.FC = () => {
             >
               <div className="flex flex-col h-full">
                 <h3 className="text-2xl font-medium mb-6 leading-relaxed">
-                  Address Real-Time Fraud with Limited Resources
+                  Explainable AI
                 </h3>
                 <p className="text-black font-light leading-relaxed mb-8 flex-grow">
-                  We empower community banks to prevent fraud attacks as they happen without the need for a large in-house team or a custom built in-house solution.
+                  Transparent decisions regulators trust.
                 </p>
                 <div className="mt-auto">
                   <div className="w-20 h-20 flex items-center justify-flex-start">
-                    <Icon icon="material-symbols:assured-workload" className="text-5xl text-fin-blue" />
+                    <Icon icon="material-symbols:encrypted-add" className="text-5xl text-fin-blue" />
                   </div>
                 </div>
               </div>
@@ -282,14 +282,16 @@ const FinOptimaLanding: React.FC = () => {
             >
               <div className="flex flex-col h-full">
                 <h3 className="text-2xl font-medium mb-6 leading-relaxed">
-                  Navigate Complex Data Privacy Challenges
+                  Built for Community Institutions
                 </h3>
                 <p className="text-black font-light leading-relaxed mb-8 flex-grow">
-                  Enables secure fraud intelligence sharing, allowing you to collaborate with other institutions to combat fraud rings without compromising member data privacy.
+                  Tailored for banks and credit unions that need simple, powerful fraud defense.
+
                 </p>
                 <div className="mt-auto">
+
                   <div className="w-20 h-20 flex items-center justify-flex-start">
-                    <Icon icon="material-symbols:encrypted-add" className="text-5xl text-fin-blue" />
+                    <Icon icon="material-symbols:assured-workload" className="text-5xl text-fin-blue" />
                   </div>
                 </div>
               </div>
@@ -1276,16 +1278,18 @@ const FinOptimaLanding: React.FC = () => {
                   />
                 </div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Anat Goldstein</h3>
+              <div className="flex items-center justify-center gap-3 mb-2">
+                <h3 className="text-xl font-bold text-gray-900">Anat Goldstein</h3>
+                <a
+                  href="https://www.linkedin.com/in/anat-goldstein/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-fin-blue hover:text-blue-700 transition-colors"
+                >
+                  <Icon icon="mdi:linkedin" className="text-2xl" />
+                </a>
+              </div>
               <p className="text-fin-blue font-medium mb-4">Co-Founder & FinTech Strategist</p>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block mb-4 text-fin-blue hover:text-blue-700 transition-colors"
-              >
-                <Icon icon="mdi:linkedin" className="text-3xl" />
-              </a>
               <p className="text-black leading-relaxed font-light">
                 FinTech strategist and co-founder with an MS in FinTech from NYU Stern. Background in investment banking (M&A, capital raising), VC/PE, and RegTech innovation. Angel investor and judge in the Most Fundable Companies Competition, bringing global, cross-sector expertise to financial risk and compliance.
               </p>
@@ -1308,16 +1312,18 @@ const FinOptimaLanding: React.FC = () => {
                   />
                 </div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Biswajit K. Lima</h3>
+              <div className="flex items-center justify-center gap-3 mb-2">
+                <h3 className="text-xl font-bold text-gray-900">Biswajit K. Lima</h3>
+                <a
+                  href="https://www.linkedin.com/in/bklima/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-fin-blue hover:text-blue-700 transition-colors"
+                >
+                  <Icon icon="mdi:linkedin" className="text-2xl" />
+                </a>
+              </div>
               <p className="text-fin-blue font-medium mb-4">Chief Technology Officer</p>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block mb-4 text-fin-blue hover:text-blue-700 transition-colors"
-              >
-                <Icon icon="mdi:linkedin" className="text-3xl" />
-              </a>
               <p className="text-black leading-relaxed font-light">
                 Financial services technology leader with 20+ years of global experience building scalable fraud and risk platforms. EMBA from Brown University, Advanced ML/AI from Stanford. Former NASDAQ, Deutsche Bank, Barclays, and Macquarie Bank.
               </p>
@@ -1340,19 +1346,21 @@ const FinOptimaLanding: React.FC = () => {
                   />
                 </div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Farook Sattar</h3>
+              <div className="flex items-center justify-center gap-3 mb-2">
+                <h3 className="text-xl font-bold text-gray-900">Farook Sattar</h3>
+                <a
+                  href="https://www.linkedin.com/in/farook-sattar-2a49107/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-fin-blue hover:text-blue-700 transition-colors"
+                >
+                  <Icon icon="mdi:linkedin" className="text-2xl" />
+                </a>
+              </div>
               <p className="text-fin-blue font-medium mb-4">Senior Researcher and Advisor</p>
-              <p className="text-black leading-relaxed font-light mb-4">
+              <p className="text-black leading-relaxed font-light">
                 30+ years of research experience with 150+ publications in signal and image processing, speech/audio, vision, and AI/ML systems. PhD from Lund University. Former engineer, educator, and research scientist.
               </p>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-fin-blue hover:bg-blue-700 text-white transition-colors"
-              >
-                <Icon icon="mdi:linkedin" className="text-xl" />
-              </a>
             </motion.div>
           </div>
         </div>
@@ -1390,10 +1398,10 @@ const FinOptimaLanding: React.FC = () => {
           </motion.div>
 
           {/* Advisors Grid */}
-          <div className="flex flex-wrap justify-center gap-12 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
             {/* Advisor 1 */}
             <motion.div
-              className="text-center w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-2rem)]"
+              className="text-center"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -1402,22 +1410,30 @@ const FinOptimaLanding: React.FC = () => {
               <div className="mb-6">
                 <div className="w-48 h-48 mx-auto rounded-full overflow-hidden bg-gray-200">
                   <img
-                    src="/placeholder-advisor-1.jpg"
-                    alt="Farook Sattar"
+                    src="/investors/pamela_cytron.jpeg"
+                    alt="Pamela Cytron"
                     className="w-full h-full object-cover"
                   />
                 </div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Farook Sattar</h3>
-              <p className="text-fin-blue font-medium mb-4">Banking Security Advisor</p>
-              <p className="text-black leading-relaxed font-light">
-                Former Chief Risk Officer at a Fortune 500 financial institution with 25+ years of experience in fraud prevention and regulatory compliance.
-              </p>
+              <div className="flex items-center justify-center gap-3 mb-2">
+                <h3 className="text-xl font-bold text-gray-900">Pamela Cytron</h3>
+                <a
+                  href="https://www.linkedin.com/in/pamelacytron/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-fin-blue hover:text-blue-700 transition-colors"
+                >
+                  <Icon icon="mdi:linkedin" className="text-2xl" />
+                </a>
+              </div>
+              <p className="text-fin-blue font-medium mb-4">Advisor</p>
+
             </motion.div>
 
             {/* Advisor 2 */}
             <motion.div
-              className="text-center w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-2rem)]"
+              className="text-center"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -1426,22 +1442,30 @@ const FinOptimaLanding: React.FC = () => {
               <div className="mb-6">
                 <div className="w-48 h-48 mx-auto rounded-full overflow-hidden bg-gray-200">
                   <img
-                    src="/placeholder-advisor-2.jpg"
-                    alt="Pamela Cytron"
+                    src="/investors/hamza_qadir.jpeg"
+                    alt="Hamza Qadir"
                     className="w-full h-full object-cover"
                   />
                 </div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Pamela Cytron</h3>
-              <p className="text-fin-blue font-medium mb-4">AI & Machine Learning Expert</p>
-              <p className="text-black leading-relaxed font-light">
-                Leading AI researcher with expertise in deep learning and pattern recognition. Previously led AI initiatives at major tech companies.
-              </p>
+              <div className="flex items-center justify-center gap-3 mb-2">
+                <h3 className="text-xl font-bold text-gray-900">Hamza Qadir</h3>
+                <a
+                  href="https://www.linkedin.com/in/hamza-qadir-b6a433b2/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-fin-blue hover:text-blue-700 transition-colors"
+                >
+                  <Icon icon="mdi:linkedin" className="text-2xl" />
+                </a>
+              </div>
+              <p className="text-fin-blue font-medium mb-4">Business Strategist</p>
+
             </motion.div>
 
             {/* Advisor 3 */}
             <motion.div
-              className="text-center w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-2rem)]"
+              className="text-center"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -1450,22 +1474,30 @@ const FinOptimaLanding: React.FC = () => {
               <div className="mb-6">
                 <div className="w-48 h-48 mx-auto rounded-full overflow-hidden bg-gray-200">
                   <img
-                    src="/placeholder-advisor-3.jpg"
-                    alt="Hamza Qadir"
+                    src="/investors/ronen_lamdan.jpeg"
+                    alt="Ronen Lamdan"
                     className="w-full h-full object-cover"
                   />
                 </div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Hamza Qadir</h3>
-              <p className="text-fin-blue font-medium mb-4">RegTech Compliance Specialist</p>
-              <p className="text-black leading-relaxed font-light">
-                Former federal banking regulator with deep expertise in BSA/AML compliance and emerging fraud schemes affecting community financial institutions.
-              </p>
+              <div className="flex items-center justify-center gap-3 mb-2">
+                <h3 className="text-xl font-bold text-gray-900">Ronen Lamdan</h3>
+                <a
+                  href="https://www.linkedin.com/in/ronenlamdan/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-fin-blue hover:text-blue-700 transition-colors"
+                >
+                  <Icon icon="mdi:linkedin" className="text-2xl" />
+                </a>
+              </div>
+              <p className="text-fin-blue font-medium mb-4">Advisor</p>
+
             </motion.div>
 
             {/* Advisor 4 */}
             <motion.div
-              className="text-center w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-2rem)]"
+              className="text-center"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -1474,41 +1506,24 @@ const FinOptimaLanding: React.FC = () => {
               <div className="mb-6">
                 <div className="w-48 h-48 mx-auto rounded-full overflow-hidden bg-gray-200">
                   <img
-                    src="/placeholder-advisor-4.jpg"
-                    alt="Ronen Lamdan"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Ronen Lamdan</h3>
-              <p className="text-fin-blue font-medium mb-4">Credit Union Technology Advisor</p>
-              <p className="text-black leading-relaxed font-light">
-                Veteran credit union executive with 30+ years leading digital transformation and fraud prevention initiatives across multiple institutions.
-              </p>
-            </motion.div>
-
-            {/* Advisor 5 */}
-            <motion.div
-              className="text-center w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-2rem)]"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-            >
-              <div className="mb-6">
-                <div className="w-48 h-48 mx-auto rounded-full overflow-hidden bg-gray-200">
-                  <img
-                    src="/placeholder-advisor-5.jpg"
+                    src="/investors/dan_williams.jpeg"
                     alt="Dan Williams"
                     className="w-full h-full object-cover"
                   />
                 </div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Dan Williams</h3>
-              <p className="text-fin-blue font-medium mb-4">Cybersecurity & Identity Verification Expert</p>
-              <p className="text-black leading-relaxed font-light">
-                Renowned cybersecurity researcher specializing in biometric authentication and identity theft prevention. PhD in Computer Science from MIT.
-              </p>
+              <div className="flex items-center justify-center gap-3 mb-2">
+                <h3 className="text-xl font-bold text-gray-900">Dan Williams</h3>
+                <a
+                  href="https://www.linkedin.com/in/danielwilliamsprofile/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-fin-blue hover:text-blue-700 transition-colors"
+                >
+                  <Icon icon="mdi:linkedin" className="text-2xl" />
+                </a>
+              </div>
+              <p className="text-fin-blue font-medium mb-4">AI Business Strategist</p>
             </motion.div>
           </div>
         </div>
