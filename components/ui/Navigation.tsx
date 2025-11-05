@@ -148,7 +148,7 @@ const Navigation: React.FC = () => {
             href="/#contact"
             className="hidden md:block bg-fin-dark-blue hover:bg-blue-800 text-white px-8 py-3 rounded-md font-medium transition-colors cursor-pointer"
           >
-            Request Demo
+            Request Free Demo
           </Link>
 
           {/* Mobile Menu Button */}
