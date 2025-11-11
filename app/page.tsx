@@ -1260,7 +1260,8 @@ const FinOptimaLanding: React.FC = () => {
           </motion.div>
 
           {/* Team Members */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          {/* First Row - 3 Members */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
             {/* Team Member 1 */}
             <motion.div
               className="text-center"
@@ -1360,6 +1361,77 @@ const FinOptimaLanding: React.FC = () => {
               <p className="text-fin-blue font-medium mb-4">Senior Researcher and Advisor</p>
               <p className="text-black leading-relaxed font-light">
                 30+ years of research experience with 150+ publications in signal and image processing, speech/audio, vision, and AI/ML systems. PhD from Lund University. Former engineer, educator, and research scientist.
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Second Row - 2 Members */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+            {/* Team Member 4 */}
+            <motion.div
+              className="text-center"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <div className="mb-6">
+                <div className="w-48 h-48 mx-auto rounded-full overflow-hidden">
+                  <img
+                    src="/nandini_dey.jpeg"
+                    alt="Nadini Dey"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              <div className="flex items-center justify-center gap-3 mb-2">
+                <h3 className="text-xl font-bold text-gray-900">Nadini Dey</h3>
+                <a
+                  href="https://www.linkedin.com/in/dr-nandini-dey-2075a65/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-fin-blue hover:text-blue-700 transition-colors"
+                >
+                  <Icon icon="mdi:linkedin" className="text-2xl" />
+                </a>
+              </div>
+              <p className="text-fin-blue font-medium mb-4">Product Management Lead</p>
+              <p className="text-black leading-relaxed font-light">
+                Strategic Product Manager skilled in Agile methodologies and product lifecycle management, driving customer-centric solutions through cross-functional collaboration.
+              </p>
+            </motion.div>
+
+            {/* Team Member 5 */}
+            <motion.div
+              className="text-center"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+            >
+              <div className="mb-6">
+                <div className="w-48 h-48 mx-auto rounded-full overflow-hidden">
+                  <img
+                    src="/samanth_chinivar.jpeg"
+                    alt="Samanth Chinivar"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              <div className="flex items-center justify-center gap-3 mb-2">
+                <h3 className="text-xl font-bold text-gray-900">Samanth Chinivar</h3>
+                <a
+                  href="https://www.linkedin.com/in/samanth-hc/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-fin-blue hover:text-blue-700 transition-colors"
+                >
+                  <Icon icon="mdi:linkedin" className="text-2xl" />
+                </a>
+              </div>
+              <p className="text-fin-blue font-medium mb-4">Senior Software Engineer</p>
+              <p className="text-black leading-relaxed font-light">
+                Senior Software Engineer specializing in Machine Learning and automation for financial services. MS in Robotics from NYU, currently pursuing MS in AI and Quantitative Finance certification.
               </p>
             </motion.div>
           </div>
