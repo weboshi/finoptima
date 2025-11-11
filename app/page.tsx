@@ -230,10 +230,11 @@ const FinOptimaLanding: React.FC = () => {
             >
               <div className="flex flex-col h-full">
                 <h3 className="text-2xl font-medium mb-6 leading-relaxed">
-                  360° Fraud Intelligence
+                  Contextual AI for Deepfake Voice Fraud Prevention
                 </h3>
                 <p className="text-black font-light leading-relaxed mb-8 flex-grow">
-                  One platform. Unified voice, text, and video defense.                </p>
+                  Real-time deepfake detection powered by Contextual AI.
+                </p>
                 <div className="mt-auto">
                   <div className="w-20 h-20 flex items-center justify-flex-start">
                     <Icon icon="material-symbols:zone-person-urgent" className="text-5xl text-fin-blue" />
@@ -255,10 +256,10 @@ const FinOptimaLanding: React.FC = () => {
             >
               <div className="flex flex-col h-full">
                 <h3 className="text-2xl font-medium mb-6 leading-relaxed">
-                  Explainable AI
+                  360° Fraud Intelligence
                 </h3>
                 <p className="text-black font-light leading-relaxed mb-8 flex-grow">
-                  Transparent decisions regulators trust.
+                  One platform. Unified voice, text, and video defense.
                 </p>
                 <div className="mt-auto">
                   <div className="w-20 h-20 flex items-center justify-flex-start">
@@ -281,14 +282,12 @@ const FinOptimaLanding: React.FC = () => {
             >
               <div className="flex flex-col h-full">
                 <h3 className="text-2xl font-medium mb-6 leading-relaxed">
-                  Built for Community Institutions
+                  RegTech Integration
                 </h3>
                 <p className="text-black font-light leading-relaxed mb-8 flex-grow">
-                  Tailored for banks and credit unions that need simple, powerful fraud defense.
-
+                  From insights to audit-ready reports—fast, compliant, and transparent.
                 </p>
                 <div className="mt-auto">
-
                   <div className="w-20 h-20 flex items-center justify-flex-start">
                     <Icon icon="material-symbols:assured-workload" className="text-5xl text-fin-blue" />
                   </div>
