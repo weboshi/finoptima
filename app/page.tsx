@@ -1259,8 +1259,8 @@ const FinOptimaLanding: React.FC = () => {
           </motion.div>
 
           {/* Team Members */}
-          {/* First Row - 4 Members */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+          {/* First Row - 3 Members */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
             {/* Team Member 1 */}
             <motion.div
               className="text-center"
@@ -1398,8 +1398,8 @@ const FinOptimaLanding: React.FC = () => {
             </motion.div>
           </div>
 
-          {/* Second Row - 2 Members */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+          {/* Second Row - 3 Members */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {/* Team Member 5 */}
             <motion.div
               className="text-center"
