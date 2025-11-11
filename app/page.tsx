@@ -202,7 +202,7 @@ const FinOptimaLanding: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.3 }}
             >
-              Next-Level AI for Next-Level Threats
+              Contextual AI for Deepfake Voice Fraud Prevention
             </motion.h2>
             <motion.p
               className="text-lg text-white font-light max-w-4xl mx-auto leading-relaxed"
@@ -211,7 +211,7 @@ const FinOptimaLanding: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.4 }}
             >
-              Our sophisticated platform provides comprehensive protection against increasingly complex fraud attacks.
+              Real-time deepfake detection powered by Contextual AI.
             </motion.p>
           </motion.div>
 
@@ -230,11 +230,10 @@ const FinOptimaLanding: React.FC = () => {
             >
               <div className="flex flex-col h-full">
                 <h3 className="text-2xl font-medium mb-6 leading-relaxed">
-                  Unified Intelligence
+                  360° Fraud Intelligence
                 </h3>
                 <p className="text-black font-light leading-relaxed mb-8 flex-grow">
-                  Break data silos and connect behavioral, voice, and transaction signals in one platform.
-                </p>
+                  One platform. Unified voice, text, and video defense.                </p>
                 <div className="mt-auto">
                   <div className="w-20 h-20 flex items-center justify-flex-start">
                     <Icon icon="material-symbols:zone-person-urgent" className="text-5xl text-fin-blue" />
@@ -1260,8 +1259,8 @@ const FinOptimaLanding: React.FC = () => {
           </motion.div>
 
           {/* Team Members */}
-          {/* First Row - 3 Members */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
+          {/* First Row - 4 Members */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
             {/* Team Member 1 */}
             <motion.div
               className="text-center"
@@ -1341,16 +1340,16 @@ const FinOptimaLanding: React.FC = () => {
               <div className="mb-6">
                 <div className="w-48 h-48 mx-auto rounded-full overflow-hidden">
                   <img
-                    src="/Farook_Photo.jpg"
-                    alt="Farook Sattar"
+                    src="/alexandre_de_wilde.jpeg"
+                    alt="Alexandre De Wilde"
                     className="w-full h-full object-cover"
                   />
                 </div>
               </div>
               <div className="flex items-center justify-center gap-3 mb-2">
-                <h3 className="text-xl font-bold text-gray-900">Farook Sattar</h3>
+                <h3 className="text-xl font-bold text-gray-900">Alexandre De Wilde</h3>
                 <a
-                  href="https://www.linkedin.com/in/farook-sattar-2a49107/"
+                  href="https://www.linkedin.com/in/alexandre-de-wilde/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-fin-blue hover:text-blue-700 transition-colors"
@@ -1358,16 +1357,50 @@ const FinOptimaLanding: React.FC = () => {
                   <Icon icon="mdi:linkedin" className="text-2xl" />
                 </a>
               </div>
-              <p className="text-fin-blue font-medium mb-4">Senior Researcher and Advisor</p>
+              <p className="text-fin-blue font-medium mb-4">Chief Financial Officer</p>
               <p className="text-black leading-relaxed font-light">
-                30+ years of research experience with 150+ publications in signal and image processing, speech/audio, vision, and AI/ML systems. PhD from Lund University. Former engineer, educator, and research scientist.
+                International CFO with expertise in M&A, fundraising, and scaling ventures across the US, Latin America, and Europe. Strategic finance leader driving growth in high-growth startups.
+              </p>
+            </motion.div>
+
+            {/* Team Member 4 */}
+            <motion.div
+              className="text-center"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <div className="mb-6">
+                <div className="w-48 h-48 mx-auto rounded-full overflow-hidden">
+                  <img
+                    src="/christina_del_villar.jpeg"
+                    alt="Christina Del Villar"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              <div className="flex items-center justify-center gap-3 mb-2">
+                <h3 className="text-xl font-bold text-gray-900">Christina Del Villar</h3>
+                <a
+                  href="https://www.linkedin.com/in/christinadelvillar/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-fin-blue hover:text-blue-700 transition-colors"
+                >
+                  <Icon icon="mdi:linkedin" className="text-2xl" />
+                </a>
+              </div>
+              <p className="text-fin-blue font-medium mb-4">Chief Marketing Officer</p>
+              <p className="text-black leading-relaxed font-light">
+                Fractional CMO specializing in go-to-market strategies that drive predictable revenue growth, working with early-stage startups and Fortune 500 companies to exceed business goals.
               </p>
             </motion.div>
           </div>
 
           {/* Second Row - 2 Members */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-            {/* Team Member 4 */}
+            {/* Team Member 5 */}
             <motion.div
               className="text-center"
               initial={{ opacity: 0, y: 50 }}
@@ -1397,17 +1430,17 @@ const FinOptimaLanding: React.FC = () => {
               </div>
               <p className="text-fin-blue font-medium mb-4">Product Management Lead</p>
               <p className="text-black leading-relaxed font-light">
-                Strategic Product Manager skilled in Agile methodologies and product lifecycle management, driving customer-centric solutions through cross-functional collaboration.
+                Strategic Product Manager skilled in Agile methodologies and product lifecycle management, driving customer-centric solutions through cross-functional collaboration. Driving strategic product initiatives from idea to impact.
               </p>
             </motion.div>
 
-            {/* Team Member 5 */}
+            {/* Team Member 6 */}
             <motion.div
               className="text-center"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.5 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
             >
               <div className="mb-6">
                 <div className="w-48 h-48 mx-auto rounded-full overflow-hidden">
@@ -1429,7 +1462,7 @@ const FinOptimaLanding: React.FC = () => {
                   <Icon icon="mdi:linkedin" className="text-2xl" />
                 </a>
               </div>
-              <p className="text-fin-blue font-medium mb-4">Senior Software Engineer</p>
+              <p className="text-fin-blue font-medium mb-4">Engineering Lead</p>
               <p className="text-black leading-relaxed font-light">
                 Senior Software Engineer specializing in Machine Learning and automation for financial services. MS in Robotics from NYU, currently pursuing MS in AI and Quantitative Finance certification.
               </p>
@@ -1578,16 +1611,16 @@ const FinOptimaLanding: React.FC = () => {
               <div className="mb-6">
                 <div className="w-48 h-48 mx-auto rounded-full overflow-hidden bg-gray-200">
                   <img
-                    src="/investors/dan_williams.jpeg"
-                    alt="Dan Williams"
+                    src="/Farook_Photo.jpg"
+                    alt="Farook Sattar"
                     className="w-full h-full object-cover"
                   />
                 </div>
               </div>
               <div className="flex items-center justify-center gap-3 mb-2">
-                <h3 className="text-xl font-bold text-gray-900">Dan Williams</h3>
+                <h3 className="text-xl font-bold text-gray-900">Farook Sattar</h3>
                 <a
-                  href="https://www.linkedin.com/in/danielwilliamsprofile/"
+                  href="https://www.linkedin.com/in/farook-sattar-2a49107/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-fin-blue hover:text-blue-700 transition-colors"
@@ -1595,7 +1628,8 @@ const FinOptimaLanding: React.FC = () => {
                   <Icon icon="mdi:linkedin" className="text-2xl" />
                 </a>
               </div>
-              <p className="text-fin-blue font-medium mb-4">AI Business Strategist</p>
+              <p className="text-fin-blue font-medium mb-4">Senior Researcher and Advisor</p>
+
             </motion.div>
           </div>
         </div>
