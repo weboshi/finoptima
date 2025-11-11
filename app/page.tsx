@@ -1374,7 +1374,7 @@ const FinOptimaLanding: React.FC = () => {
               <div className="mb-6">
                 <div className="w-48 h-48 mx-auto rounded-full overflow-hidden">
                   <img
-                    src="/christina_del_villar.jpeg"
+                    src="/Christina_Del_Villar.jpeg"
                     alt="Christina Del Villar"
                     className="w-full h-full object-cover"
                   />
