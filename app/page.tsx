@@ -1259,10 +1259,10 @@ const FinOptimaLanding: React.FC = () => {
 
           {/* Team Members */}
           {/* First Row - 3 Members */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
+          <div className="flex flex-wrap justify-center gap-12 mb-12">
             {/* Team Member 1 */}
             <motion.div
-              className="text-center"
+              className="text-center w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(25%-2.25rem)]"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -1296,7 +1296,7 @@ const FinOptimaLanding: React.FC = () => {
 
             {/* Team Member 2 */}
             <motion.div
-              className="text-center"
+              className="text-center w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(25%-2.25rem)]"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -1330,7 +1330,7 @@ const FinOptimaLanding: React.FC = () => {
 
             {/* Team Member 3 */}
             <motion.div
-              className="text-center"
+              className="text-center w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(25%-2.25rem)]"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -1362,13 +1362,51 @@ const FinOptimaLanding: React.FC = () => {
               </p>
             </motion.div>
 
-            {/* Team Member 4 */}
+          </div>
+
+          {/* Second Row - 4 Members */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            {/* Team Member 4 - Tom */}
             <motion.div
               className="text-center"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <div className="mb-6">
+                <div className="w-48 h-48 mx-auto rounded-full overflow-hidden">
+                  <img
+                    src="/tom_griffiths.jpeg"
+                    alt="Tom Griffiths"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              <div className="flex items-center justify-center gap-3 mb-2">
+                <h3 className="text-xl font-bold text-gray-900">Tom Griffiths</h3>
+                <a
+                  href="https://www.linkedin.com/in/tegriffiths/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-fin-blue hover:text-blue-700 transition-colors"
+                >
+                  <Icon icon="mdi:linkedin" className="text-2xl" />
+                </a>
+              </div>
+              <p className="text-fin-blue font-medium mb-4">Chief Revenue Officer</p>
+              <p className="text-black leading-relaxed font-light">
+                GTM leader with 10+ years of experience across North America, Europe, and the GCC, leading data-driven teams and building relationships with retail banks and PE funds.
+              </p>
+            </motion.div>
+
+            {/* Team Member 5 - Christina */}
+            <motion.div
+              className="text-center"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.5 }}
             >
               <div className="mb-6">
                 <div className="w-48 h-48 mx-auto rounded-full overflow-hidden">
@@ -1395,17 +1433,14 @@ const FinOptimaLanding: React.FC = () => {
                 Fractional CMO specializing in go-to-market strategies that drive predictable revenue growth, working with early-stage startups and Fortune 500 companies to exceed business goals.
               </p>
             </motion.div>
-          </div>
 
-          {/* Second Row - 3 Members */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            {/* Team Member 5 */}
+            {/* Team Member 6 - Nadini */}
             <motion.div
               className="text-center"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
             >
               <div className="mb-6">
                 <div className="w-48 h-48 mx-auto rounded-full overflow-hidden">
@@ -1417,7 +1452,7 @@ const FinOptimaLanding: React.FC = () => {
                 </div>
               </div>
               <div className="flex items-center justify-center gap-3 mb-2">
-                <h3 className="text-xl font-bold text-gray-900">Nadini Dey</h3>
+                <h3 className="text-xl font-bold text-gray-900">Nandini Dey</h3>
                 <a
                   href="https://www.linkedin.com/in/dr-nandini-dey-2075a65/"
                   target="_blank"
@@ -1429,7 +1464,7 @@ const FinOptimaLanding: React.FC = () => {
               </div>
               <p className="text-fin-blue font-medium mb-4">Product Management Lead</p>
               <p className="text-black leading-relaxed font-light">
-                Strategic Product Manager skilled in Agile methodologies and product lifecycle management, driving customer-centric solutions through cross-functional collaboration. Driving strategic product initiatives from idea to impact.
+                Strategic Product Manager driving innovation and customer value through thoughtful strategy, collaboration, and execution excellence.
               </p>
             </motion.div>
 
@@ -1439,7 +1474,7 @@ const FinOptimaLanding: React.FC = () => {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.6 }}
+              transition={{ duration: 0.6, delay: 0.7 }}
             >
               <div className="mb-6">
                 <div className="w-48 h-48 mx-auto rounded-full overflow-hidden">
@@ -1466,6 +1501,7 @@ const FinOptimaLanding: React.FC = () => {
                 Senior Software Engineer specializing in Machine Learning and automation for financial services. MS in Robotics from NYU, currently pursuing MS in AI and Quantitative Finance certification.
               </p>
             </motion.div>
+
           </div>
         </div>
       </section>
